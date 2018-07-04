@@ -84,7 +84,7 @@ Tells passport to use this specific strategy.
 console.developers.google.com
 Google developers website to access Google APIS.
 
-__Authorise redirt URIs__
+__Authorise redirect URIs__
 - 400 status - 'redirect error mismatch'
 - Security related, makes sure users do not get redirected to a malicious site.
 - To fix this, list the redirect URI in the credentials section of your Google developers console.
@@ -97,6 +97,7 @@ _____________________
 <br>
 
 **CHAPTER 04**
+
 __MongoDB__
 
 - Mongoose library is used to help us hook up the MongoDB.
@@ -105,3 +106,9 @@ __MongoDB__
 - Using [mLab](https://mlab.com/home)
 - This database is used to save our collection of users. This will help verify users visiting the app.
 
+__Authentication__
+- Request comes in, cookie-session will extract data from cookie
+- Passport will grab the id from the cookie
+- id is passed to deserializer function and will turn id into user
+- user is added to request object as `req.user`
+- request goes to the route handler
