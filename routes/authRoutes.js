@@ -15,6 +15,12 @@ module.exports = (app) => {
         '/auth/google/callback', passport.authenticate('google')
     )
 
+    // logout users
+    app.get('/api/logout', (req, res) => {
+        req.logout() //the logout function will kill the cookie
+        res.send(req.user)
+    })
+
     app.get(
         '/api/currentuser', (req, res) => {
             res.send(req.user)
