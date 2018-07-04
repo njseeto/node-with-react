@@ -12,11 +12,12 @@ passport.use(new GoogleStrategy({
 }, (accessToken, refreshToken, profile, done) => {
     User.findOne({ googleId: profile.id }) // this returns a promise
         .then((existingUser) => {
-            if (existingUser) {
-                // already have record with the given profile ID
-            } else {
-                // don't have a record so create an instance of a new user
-                new User({ googleId: profile.id }).save() //creates a new instance of a user
+            if (existingUser) { // already have a record with profile id
+                done(null, existingUser)
+            } else { // don't have a record so create an instance of a new user
+                new User({ googleId: profile.id })
+                    .save()
+                    .then(user => done(null, user))
             }
         })
 })
