@@ -64,3 +64,5 @@ quickstart.js
 #DSStore
 .DS_Store
 .vscode
+
+keys.js

@@ -1,4 +1,7 @@
-**Chapter 01**
+App link: https://stormy-journey-45667.herokuapp.com/
+
+
+**CHAPTER 01**
 
 Node
 - JavaScript runtime used to execute code outside of the browser.
@@ -18,7 +21,10 @@ Node and Express
 - The reponses are fed back to whoever made the HTTP requests
 
 
-**Chapter 02**
+______________________
+<br>
+
+**CHAPTER 02**
 
 By calling app.get we are creating a new route handler
 The get method gets info about some particular record
@@ -54,4 +60,48 @@ Specify Start script
 
 Create .gitignore file
 - Purpose of this is so we do not commit the dependencies we've created
+
+
+**Heroku Depoyments**
+- Make the change, save it
+- run `git add` `git commit -m (comment)`
+- run `git push heroku master` to push changes to heroku
+
+___________________
+<br>
+
+**CHAPTER 03**
+
+__OAuth__
+- Using PassportJS to help implement OAuth
+- PassportJS uses two libraries: Passport (general helpers that handle authentication in Express apps) and Passport Strategy (specific helpers for authenticating with one specific method eg: Google or Facebook).
+- Passport Strategy only handles one specific method. If you want to use Facebook and Google for authentication, you need to use 2 passport strategies.
+
+
+`passport.use(new GoogleStrategy())`
+Tells passport to use this specific strategy.
+
+console.developers.google.com
+Google developers website to access Google APIS.
+
+__Authorise redirt URIs__
+- 400 status - 'redirect error mismatch'
+- Security related, makes sure users do not get redirected to a malicious site.
+- To fix this, list the redirect URI in the credentials section of your Google developers console.
+
+Access token: If we had asked for permission on the users behalf, the access token allows us to do this.
+Refresh token: Used to refresh the access token, the access token expires after some amount of time.
+Profile: Has information about the user.
+
+_____________________
+<br>
+
+**CHAPTER 04**
+__MongoDB__
+
+- Mongoose library is used to help us hook up the MongoDB.
+- Mongoose helps to create a new 'collection' in Mongo
+- A model class is used in Mongoose which automatically creates a collection in Mongo
+- Using [mLab](https://mlab.com/home)
+- This database is used to save our collection of users. This will help verify users visiting the app.
 
