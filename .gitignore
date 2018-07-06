@@ -65,4 +65,4 @@ quickstart.js
 .DS_Store
 .vscode
 
-keys.js
+dev.js

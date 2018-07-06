@@ -112,3 +112,25 @@ __Authentication__
 - id is passed to deserializer function and will turn id into user
 - user is added to request object as `req.user`
 - request goes to the route handler
+
+__cookie-session library vs express-session library__
+
+The main difference:
+- cookie session: the cookie is the session. The data relating to the session is stored inside the cookie.
+- express session: stores a reference to a session. The data relating to the session is stored outside of the cookie.
+
+Why use one or the other:
+- express session, you can store as much data as you want.
+- cookie session, can only store about 4kb (the max amount a cookie can store).
+
+**CHAPTER 05**
+__Dev vs Prod Keys__
+
+- Allows development locally and a separate set of keys in Heroku.
+- This means if the local keys are lost, you have a production copy.
+- In mLabs, create a new database for production, with its own production users.
+- In Google Developers,  for the prod version when creating a new OAuth client, 
+be sure to add home screen / logo etc in OAuth consent screen if you want it to be production.
+- For prod, redirect URL to Heroku instance.
+- In the code, create an if/else statement to deal with keys for production and dev environments.
+- Do push prod.js file to allow Heroku to access it.
