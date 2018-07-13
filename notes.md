@@ -107,6 +107,7 @@ __MongoDB__
 - This database is used to save our collection of users. This will help verify users visiting the app.
 
 __Authentication__
+
 - Request comes in, cookie-session will extract data from cookie
 - Passport will grab the id from the cookie
 - id is passed to deserializer function and will turn id into user
@@ -123,7 +124,11 @@ Why use one or the other:
 - express session, you can store as much data as you want.
 - cookie session, can only store about 4kb (the max amount a cookie can store).
 
+_________________
+<br>
+
 **CHAPTER 05**
+
 __Dev vs Prod Keys__
 
 - Allows development locally and a separate set of keys in Heroku.
@@ -134,3 +139,29 @@ be sure to add home screen / logo etc in OAuth consent screen if you want it to 
 - For prod, redirect URL to Heroku instance.
 - In the code, create an if/else statement to deal with keys for production and dev environments.
 - Do push prod.js file to allow Heroku to access it.
+
+_________________
+<br>
+
+**CHAPTER 06**
+
+__Create React App__
+
+- `npm install -g create-react-app`
+- In your project run the following command: `create-react-app client`
+- This will create the 'client' folder and it has it's own built in server
+- To run this server, cd into the 'client' folder and run `npm start`
+
+Why do we need a an Express server and a React Server?
+
+- The Express server communicates with MongoDB grabs a JSON. It is solely concerned with serving JSON data.
+- The React server, uses webpack and babel. The React server takes care of the front end application assets.
+- But why do we have two separate servers? Because using Create React App makes app development a lot easier and it is worth having to deal with two separate servers.
+
+How do we run both servers at the same time?
+
+- We can use 'concurrently'
+- We have 2 `package.json` files. One for the front end and one for the back end. Make sure you are working on the correct file
+- In the backend package.json file we have added a new script `"client": "npm run start --prefix client"`
+- This runs the front end server (the `--prefix client`) addition tells the machine to cd into the client folder
+- `"dev": "concurrently \"npm run server\" \"npm run client\""` This script in the server package.json runs both servers using the concurrently package
