@@ -182,3 +182,11 @@ This only needs to be done for the development server. When we deploy to product
   }
 ```
 
+__Architecture__
+
+AJAX requests
+<br>
+- If we attempt to make an AKAX request from localhost:3000 to another domain (eg: localhost:5000), cookies are removed.
+- Similarly, if you load up localhost:3000 and make an AJAX request to another domain, it becomes a CORS request.
+This is a security issue that the browser places. This can be solved by making a request to the separate domain.
+- The proxy helps to bypass the two above hurdles as the browser thinks it goes straight to the Express server.
