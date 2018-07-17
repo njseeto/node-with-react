@@ -165,3 +165,20 @@ How do we run both servers at the same time?
 - In the backend package.json file we have added a new script `"client": "npm run start --prefix client"`
 - This runs the front end server (the `--prefix client`) addition tells the machine to cd into the client folder
 - `"dev": "concurrently \"npm run server\" \"npm run client\""` This script in the server package.json runs both servers using the concurrently package
+
+<br>
+
+__Create React App's Proxy__
+
+The following code in the client, json.package uses the built in 'proxy' script. This script tells the app to automatically forward the `/auth/google` href onto localhost 5000, which is the Express API.
+
+This only needs to be done for the development server. When we deploy to production, we no longer use the create-react-app server at all. Everything is executed on Heroku, that is, all the relative links automatically get re-written by the browser as heroku-app.com etc
+
+```
+"proxy": {
+    "/auth/google" : {
+      "target": "http://localhost:5000/"
+    }
+  }
+```
+
