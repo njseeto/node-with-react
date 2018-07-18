@@ -243,3 +243,7 @@ __React Router Setup__
 - `import { BrowserRouter, Route } from 'react-router-dom'`
 - BrowserRouter is the 'brain' of react router, it tells react router how to behave.
 - Route is a React component, to set up a rule between a route and a set of components that will be visible on the screen.
+
+__Visibility of Components__
+- `exact` This is used in the App.js file. It is short for `exact={true}` and tells the browser to go to that exact path. If this bit of code is not present, App.js will show both components. This prevents the application from 'greedily matching'.
+- If you want a component to show at all times, just treat it like any other component (eg: Header component).
