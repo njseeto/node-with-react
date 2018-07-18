@@ -190,3 +190,29 @@ AJAX requests
 - Similarly, if you load up localhost:3000 and make an AJAX request to another domain, it becomes a CORS request.
 This is a security issue that the browser places. This can be solved by making a request to the separate domain.
 - The proxy helps to bypass the two above hurdles as the browser thinks it goes straight to the Express server.
+
+__Async/Await Syntax__
+
+- Remember `fetch` returns a promise
+- res.json() allows you to read the data in the promise (the response object). This promise has to be resolved before moving on.
+- this returns the json object that we care about and can now do what we want with it.
+
+For example:
+```
+function fetchAlbums(){
+    fetch('https://rallycoding.herokuapp.com/api/music_albums')
+    .then(res => res.json())
+    .then(json => console.log(json))
+}
+fetchAlbums()
+```
+
+To write this using async/await syntax:
+```
+const fetchAlbums = async () => {
+    const res = await fetch('https://rallycoding.herokuapp.com/api/music_albums')
+    const json = await res.json()
+    console.log(json)
+}
+fetchAlbums()
+```
