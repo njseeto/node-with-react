@@ -247,3 +247,11 @@ __React Router Setup__
 __Visibility of Components__
 - `exact` This is used in the App.js file. It is short for `exact={true}` and tells the browser to go to that exact path. If this bit of code is not present, App.js will show both components. This prevents the application from 'greedily matching'.
 - If you want a component to show at all times, just treat it like any other component (eg: Header component).
+
+
+__Axios and Redux Thunk__
+- Axios is responsible for helping us make AJAX requests to our backend API.
+- Redux Thunk makes asynchronous action creators behave the way we expect.
+- The purpose of an Action Creator is to return an action.
+- This action gets sent to all of the reducers.
+- The reducers produces new values for store and store updates the state for all the components.
