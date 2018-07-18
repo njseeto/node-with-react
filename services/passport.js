@@ -24,10 +24,9 @@ passport.use(new GoogleStrategy({
 }, async (accessToken, refreshToken, profile, done) => {
     const existingUser = await User.findOne({ googleId: profile.id }) // this returns a promise
     if (existingUser) { // already have a record with profile id
-        done(null, existingUser)
-    } else { // don't have a record so create an instance of a new user
+        return done(null, existingUser)
+    } // don't have a record so create an instance of a new user
         const user = await new User({ googleId: profile.id }).save()
         done(null, user)
-    }
-})
+    })
 )

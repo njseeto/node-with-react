@@ -216,3 +216,15 @@ const fetchAlbums = async () => {
 }
 fetchAlbums()
 ```
+
+
+**CHAPTER 07**
+__Installing Root Modules__
+- Convention: Use of capitalised letter for certain files eg: App.js, indicates the file returns a component. If the file returns functions, use a lowercase eg: index.js
+- The `#root` refers to the root tag in the index.html file
+
+```
+ReactDOM.render(
+    <App />, document.querySelector('#root')
+)
+```
