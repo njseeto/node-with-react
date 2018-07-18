@@ -21,16 +21,13 @@ passport.use(new GoogleStrategy({
     clientSecret: keys.googleClientSecret,
     callbackURL: '/auth/google/callback',
     proxy: true
-}, (accessToken, refreshToken, profile, done) => {
-    User.findOne({ googleId: profile.id }) // this returns a promise
-        .then((existingUser) => {
-            if (existingUser) { // already have a record with profile id
-                done(null, existingUser)
-            } else { // don't have a record so create an instance of a new user
-                new User({ googleId: profile.id })
-                    .save()
-                    .then(user => done(null, user))
-            }
-        })
+}, async (accessToken, refreshToken, profile, done) => {
+    const existingUser = await User.findOne({ googleId: profile.id }) // this returns a promise
+    if (existingUser) { // already have a record with profile id
+        done(null, existingUser)
+    } else { // don't have a record so create an instance of a new user
+        const user = await new User({ googleId: profile.id }).save()
+        done(null, user)
+    }
 })
 )
