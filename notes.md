@@ -238,3 +238,8 @@ __Redux Review and Setup__
 __Auth Reducer__
 - Responsible for deciding whether or not the user is logged in.
 - Auth reducer will be passed to combine reducers call then to the store.
+
+__React Router Setup__
+- `import { BrowserRouter, Route } from 'react-router-dom'`
+- BrowserRouter is the 'brain' of react router, it tells react router how to behave.
+- Route is a React component, to set up a rule between a route and a set of components that will be visible on the screen.
