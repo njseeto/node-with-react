@@ -229,9 +229,12 @@ ReactDOM.render(
 )
 ```
 
-
 __Redux Review and Setup__
 - Redux Store stores the state.
 - Reducers help to change the state through a Combine Reducers call.
 - The store allows all components in the React app to access the global state.
 - Provider is a component that makes the store available to every component in the app.
+
+__Auth Reducer__
+- Responsible for deciding whether or not the user is logged in.
+- Auth reducer will be passed to combine reducers call then to the store.
