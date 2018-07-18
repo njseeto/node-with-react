@@ -228,3 +228,10 @@ ReactDOM.render(
     <App />, document.querySelector('#root')
 )
 ```
+
+
+__Redux Review and Setup__
+- Redux Store stores the state.
+- Reducers help to change the state through a Combine Reducers call.
+- The store allows all components in the React app to access the global state.
+- Provider is a component that makes the store available to every component in the app.
