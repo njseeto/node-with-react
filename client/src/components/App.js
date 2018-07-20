@@ -1,5 +1,8 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { BrowserRouter, Route } from 'react-router-dom'
+import { connect } from 'react-redux'
+import * as actions from '../actions'
+
 import Header from './Header'
 
 //set up some dummy components
@@ -9,6 +12,7 @@ const Landing = () => <h2>Landing</h2>
 
 class App extends Component {
     componentDidMount() { // componentDidMount is the preferred method for AJAX requests
+        this.props.fetchUser()
     }
     render(){
         return (
@@ -26,4 +30,4 @@ class App extends Component {
     }
 }
 
-export default App
+export default connect(null, actions)(App)
