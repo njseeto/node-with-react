@@ -12,8 +12,3 @@ ReactDOM.render(
     <Provider store={store}><App /></Provider>, // anytime the redux store gets a new state, the provider will update all components with the new state
     document.querySelector('#root')
 )
-
-
-
-
-
