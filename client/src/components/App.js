@@ -14,15 +14,15 @@ class App extends Component {
     componentDidMount() { // componentDidMount is the preferred method for AJAX requests
         this.props.fetchUser()
     }
-    render(){
+    render() {
         return (
             <div className="container">
                 <BrowserRouter>
                     <div>
-                        <Header/>
-                        <Route exact path='/' component={ Landing } />
-                        <Route exact path='/surveys' component={ Dashboard } />
-                        <Route exact path='/surveys/new' component={ SurveyNew } />
+                        <Header />
+                        <Route exact path='/' component={Landing} />
+                        <Route exact path='/surveys' component={Dashboard} />
+                        <Route exact path='/surveys/new' component={SurveyNew} />
                     </div>
                 </BrowserRouter>
             </div>
