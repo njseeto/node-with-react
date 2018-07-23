@@ -12,7 +12,11 @@ module.exports = (app) => {
 
     //at this point OAuth has the code to be able to authenticate the chosen email
     app.get(
-        '/auth/google/callback', passport.authenticate('google')
+        '/auth/google/callback',
+        passport.authenticate('google'),
+        (req, res) => {
+            res.redirect('/surveys') // redirect the user from google authentication to /surverys in the app
+        }
     )
 
     // logout users
