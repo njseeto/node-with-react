@@ -255,3 +255,13 @@ __Axios and Redux Thunk__
 - The purpose of an Action Creator is to return an action.
 - This action gets sent to all of the reducers.
 - The reducers produces new values for store and store updates the state for all the components.
+
+__Link Tags__
+- Link help navigate the user to different routes with React Router
+```
+ <Link
+    to={this.props.auth ? '/surveys' : '/'}
+    className="left-brand-logo">
+    Emaily
+</Link>
+```
