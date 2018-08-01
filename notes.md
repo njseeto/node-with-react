@@ -265,3 +265,17 @@ __Link Tags__
     Emaily
 </Link>
 ```
+
+__Stripe__
+- Using react-stripe-checkout using `npm install --save react-stripe-checkout`
+- You will need the _publishable key_ and _secret key_, both found on the Stripe website.
+- The publishable key can be published, the secret key needs to be kept hidden.
+- Set up the publishable key and secret key on the client side through the prod.js and dev.js files.
+- Also set up both keys in the server via Heroku config vars.
+
+__React Environment Variables__
+- Documentation can be found [here](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-custom-environment-variables)
+- NOTE: Need to expose all custom environment variables beginning with `REACT_APP_`
+- Define permanent environment variables through a `.env` file in the root of the project.
+- We are going to make an `.env.development` and `.env.production` - these dot files will not show up in MacOS folders.
+- 

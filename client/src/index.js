@@ -12,3 +12,6 @@ ReactDOM.render(
     <Provider store={store}><App /></Provider>, // anytime the redux store gets a new state, the provider will update all components with the new state
     document.querySelector('#root')
 )
+
+console.log('Stripe key is: ', process.env.REACT_APP_STRIPE_KEY)
+console.log('Environment is: ', process.env.NODE_ENV)
