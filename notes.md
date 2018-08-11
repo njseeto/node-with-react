@@ -279,3 +279,10 @@ __React Environment Variables__
 - NOTE: Need to expose all custom environment variables beginning with `REACT_APP_`
 - Define permanent environment variables through a `.env` file in the root of the project.
 - We are going to make an `.env.development` and `.env.production` - these dot files will not show up in MacOS folders.
+
+
+__Body Parser__
+- Need to install `bodyparser`
+- The Express server by default does not parse the request payload given by a post request.
+- This is why we need to install bodyparser.
+
